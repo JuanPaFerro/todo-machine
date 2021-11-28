@@ -1,4 +1,4 @@
-import "./CSS/TodoSearch.css";
+import "./TodoSearch.css";
 function TodoSearch({ searchValue, setSearchValue }) {
   const handleSearch = (e) => {
     setSearchValue(e.target.value);

@@ -1,4 +1,4 @@
-import "./CSS/TodoItem.css";
+import "./TodoItem.css";
 
 function TodoItem(props) {
   return (

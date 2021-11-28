@@ -1,5 +1,5 @@
 import React from 'react';
-import './CSS/CreateTodoButton.css';
+import './CreateTodoButton.css';
 
 function CreateTodoButton(props) {
   const handleCreateTodo = (msg)=>{
