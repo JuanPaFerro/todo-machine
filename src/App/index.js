@@ -9,14 +9,6 @@ paleta de colores
 .color5 {color: #55e7ff;}
 */
 
-/*
-const defaultTodos = [
-  { text: "Take a course with Platzi", completed: true },
-  { text: "Set a meeting for tomorrow", completed: false },
-  { text: "Do the shopping for the week", completed: false },
-  { text: "Workout for 2-3 hours", completed: false },
-];
-*/
 
 function App() {
   return (
