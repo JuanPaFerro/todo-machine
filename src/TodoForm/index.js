@@ -21,11 +21,12 @@ function TodoForm() {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <label>Enter your new TODO</label>
+      <label>Enter your new ToDo</label>
       <textarea
+        cols="15"
         value={newTodoValue}
         onChange={handleTextChange}
-        placeholder="Enter a new Task"
+        placeholder="Feed the Cat"
       />
       <div className="TodoForm-buttonContainer">
         <button
