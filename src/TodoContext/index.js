@@ -29,18 +29,23 @@ function TodoProvider(props) {
 
   const addTodo = (text) => {
     const newTodos = [...todos];
-    newTodos.push({ text: text, completed: false });
+    newTodos.push({
+      id: "_" + Math.random().toString(36).substr(2, 9),
+      text: text,
+      completed: false,
+    });
+    console.log(newTodos);
     saveTodos(newTodos);
   };
 
-  const completeTodos = (text) => {
-    const todoIndex = todos.findIndex((t) => t.text === text);
+  const completeTodos = (id) => {
+    const todoIndex = todos.findIndex((t) => t.id === id);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     saveTodos(newTodos);
   };
-  const deleteTodos = (text) => {
-    const todoIndex = todos.findIndex((t) => t.text === text);
+  const deleteTodos = (id) => {
+    const todoIndex = todos.findIndex((t) => t.id === id);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);

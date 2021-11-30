@@ -37,11 +37,11 @@ function AppUI() {
         {!loading && !searchedTodos.length && <EmptyTodos />}
         {searchedTodos.map((todo) => (
           <TodoItem
-            key={todo.text}
+            key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodos(todo.text)}
-            onDelete={() => deleteTodos(todo.text)}
+            onComplete={() => completeTodos(todo.id)}
+            onDelete={() => deleteTodos(todo.id)}
           />
         ))}
       </TodoList>
