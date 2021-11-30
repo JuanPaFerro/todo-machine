@@ -1,5 +1,5 @@
 import "./TodoItem.css";
-
+import IconComponent from "../IconComponent";
 function TodoItem(props) {
   return (
     <li className="TodoItem">
@@ -7,13 +7,13 @@ function TodoItem(props) {
         className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
         onClick={props.onComplete}
       >
-        &#10003;
+        <IconComponent type="check" />
       </span>
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
       </p>
       <span className="Icon Icon-delete" onClick={props.onDelete}>
-        x
+        <IconComponent type="delete" />
       </span>
     </li>
   );
