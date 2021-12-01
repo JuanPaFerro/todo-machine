@@ -9,7 +9,10 @@ function TodoItem(props) {
       >
         <IconComponent type="check" />
       </span>
-      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+      <p
+        onClick={props.onComplete}
+        className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
+      >
         {props.text}
       </p>
       <span className="Icon Icon-delete" onClick={props.onDelete}>

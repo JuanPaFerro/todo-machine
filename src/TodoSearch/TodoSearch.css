@@ -22,3 +22,6 @@
   .todo_search:focus {
     outline-color: #61DAFA;
   }
+  .todo_search:disabled{
+    opacity: 60%;
+  }

@@ -6,3 +6,7 @@
 p{
   font-size: 18px;
 }
+
+.TodoCounter--loading{
+  opacity: 60%;
+}

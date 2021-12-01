@@ -30,26 +30,29 @@ function App() {
   return (
     <React.Fragment>
       <WelcomeComponent />
-      <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TodoCounter  totalTodos={totalTodos} completedTodos={completedTodos} loading={loading} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading}/>
 
-      <TodoList>
-        {error && <TodosError />}
-        {loading &&
-          Array(5)
-            .fill(1)
-            .map((a, i) => <TodosLoading key={i} />)}
-        {!loading && !searchedTodos.length && <EmptyTodos />}
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodos(todo.id)}
-            onDelete={() => deleteTodos(todo.id)}
-          />
-        ))}
-      </TodoList>
+      <TodoList
+        totalTodos={totalTodos}
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
+        onEmptyTodos={() => <EmptyTodos type="empty-list" />}
+        onEmptySearchResults={() => (
+          <EmptyTodos type="empty-search" searchValue={searchValue} />
+        )}
+      >{(todo) => (
+        <TodoItem
+          key={todo.id}
+          text={todo.text}
+          completed={todo.completed}
+          onComplete={() => completeTodos(todo.id)}
+          onDelete={() => deleteTodos(todo.id)}
+        />
+      )}</TodoList>
 
       {!!openModal && (
         <Modal>

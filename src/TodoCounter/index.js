@@ -1,9 +1,9 @@
 import "./TodoCounter.css";
 
-function TodoCounter({ totalTodos, completedTodos } ) {
+function TodoCounter({ totalTodos, completedTodos, loading }) {
   return (
-    <div className="TodoCounter">
-      <p>Completed Tasks: {`${completedTodos} of ${totalTodos}`}</p>
+    <div className={`TodoCounter ${!!loading && "TodoCounter--loading"}`}>
+      <p>Completed ToDo's: {`${completedTodos} of ${totalTodos}`}</p>
     </div>
   );
 }
