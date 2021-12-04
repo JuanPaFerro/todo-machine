@@ -11,6 +11,8 @@ import TodoForm from "../TodoForm";
 import EmptyTodos from "../EmptyTodos";
 import TodosError from "../TodosError";
 import TodosLoading from "../TodosLoading";
+import ChangeAlert from "../ChangeAlert";
+import "./App.css";
 
 function App() {
   const {
@@ -26,12 +28,21 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    synchronizeTodos,
   } = useTodos();
   return (
-    <React.Fragment>
+    <div className="App-container">
       <WelcomeComponent />
-      <TodoCounter  totalTodos={totalTodos} completedTodos={completedTodos} loading={loading} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading}/>
+      <TodoCounter
+        totalTodos={totalTodos}
+        completedTodos={completedTodos}
+        loading={loading}
+      />
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        loading={loading}
+      />
 
       <TodoList
         totalTodos={totalTodos}
@@ -44,15 +55,17 @@ function App() {
         onEmptySearchResults={() => (
           <EmptyTodos type="empty-search" searchValue={searchValue} />
         )}
-      >{(todo) => (
-        <TodoItem
-          key={todo.id}
-          text={todo.text}
-          completed={todo.completed}
-          onComplete={() => completeTodos(todo.id)}
-          onDelete={() => deleteTodos(todo.id)}
-        />
-      )}</TodoList>
+      >
+        {(todo) => (
+          <TodoItem
+            key={todo.id}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodos(todo.id)}
+            onDelete={() => deleteTodos(todo.id)}
+          />
+        )}
+      </TodoList>
 
       {!!openModal && (
         <Modal>
@@ -61,7 +74,9 @@ function App() {
       )}
 
       <CreateTodoButton setOpenModal={setOpenModal} />
-    </React.Fragment>
+
+      <ChangeAlert synchronizeTodos={synchronizeTodos} />
+    </div>
   );
 }
 
