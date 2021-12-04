@@ -1,14 +1,14 @@
 import useStorageListener from "./useStorageListener";
 import "./ChangeAlert.css";
 function ChangeAlert({ synchronizeTodos }) {
-  const { show, toggleShow } = useStorageListener();
+  const { show, toggleShow } = useStorageListener(synchronizeTodos);
   if (show) {
     return (
       <div className="ChangeAlert-container">
         <div className="ChangeAlert-container-bottom">
           <div className="inner-container">
             <h2>Your ToDo's are outdated, please refresh.</h2>
-            <button onClick={() => toggleShow(synchronizeTodos)}>
+            <button onClick={() => toggleShow()}>
               Refresh
             </button>
           </div>
