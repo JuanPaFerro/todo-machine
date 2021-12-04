@@ -7,7 +7,6 @@ function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = useState(initialValue);
 
   useEffect(() => {
-    console.log("efecto");
     setTimeout(() => {
       try {
         const localStorageItem = localStorage.getItem(itemName);
@@ -27,6 +26,7 @@ function useLocalStorage(itemName, initialValue) {
         setError(error);
       }
     }, 3000);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [synchronizedItem]);
 
   const saveItem = (newItem) => {
