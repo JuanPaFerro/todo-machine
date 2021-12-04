@@ -1,7 +1,7 @@
 import useStorageListener from "./useStorageListener";
 import "./ChangeAlert.css";
 function ChangeAlert({ synchronizeTodos }) {
-  const { show, toggleShow } = useStorageListener(synchronizeTodos);
+  const { show, toggleShow } = useStorageListener();
   if (show) {
     return (
       <div className="ChangeAlert-container">
