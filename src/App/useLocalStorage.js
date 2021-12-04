@@ -7,6 +7,7 @@ function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = useState(initialValue);
 
   useEffect(() => {
+    console.log("efecto");
     setTimeout(() => {
       try {
         const localStorageItem = localStorage.getItem(itemName);

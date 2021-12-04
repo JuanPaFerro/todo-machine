@@ -19,11 +19,10 @@ function useTodos() {
   if (!searchValue.length >= 1) {
     searchedTodos = todos;
   } else {
-    searchedTodos = todos.filter((todo) => {
-      if (todo.text.toLowerCase().includes(searchValue.toLowerCase())) {
-        return todo;
-      }
-    });
+    searchedTodos = todos.filter(
+      (todo) =>
+        todo.text.toLowerCase().includes(searchValue.toLowerCase()) && todo
+    );
   }
 
   const addTodo = (text) => {
