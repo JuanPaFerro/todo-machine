@@ -4,10 +4,10 @@
   padding: 10px 10px 0 10px;
   color: #ffca82;
 }
-h1 {
+.WelcomeComponent h1 {
   margin-bottom: 0;
 }
-h3 {
+.WelcomeComponent h3 {
   margin-top: 0;
   margin-bottom: 0;
 }

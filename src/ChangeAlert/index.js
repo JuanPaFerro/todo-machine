@@ -7,7 +7,7 @@ function ChangeAlert({ synchronizeTodos }) {
       <div className="ChangeAlert-container">
         <div className="ChangeAlert-container-bottom">
           <div className="inner-container">
-            <p>Your ToDo's are outdated, please refresh.</p>
+            <h2>Your ToDo's are outdated, please refresh.</h2>
             <button onClick={() => toggleShow(synchronizeTodos)}>
               Refresh
             </button>
