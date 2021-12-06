@@ -15,21 +15,25 @@ import ChangeAlert from "../ChangeAlert";
 import "./App.css";
 
 function App() {
+  const { states, stateUpdaters } = useTodos();
   const {
     error,
     loading,
-    searchedTodos,
-    completeTodos,
-    deleteTodos,
-    openModal,
-    setOpenModal,
     totalTodos,
     completedTodos,
     searchValue,
+    searchedTodos,
+    openModal,
+  } = states;
+  const {
+    completeTodos,
+    deleteTodos,
     setSearchValue,
     addTodo,
+    setOpenModal,
     synchronizeTodos,
-  } = useTodos();
+  } = stateUpdaters;
+
   return (
     <div className="App-container">
       <WelcomeComponent />
