@@ -1,4 +1,6 @@
-form {
+import styled from "styled-components";
+
+export const Form = styled.form`
   width: 90%;
   max-width: 300px;
   background-color: #30668379;
@@ -8,17 +10,17 @@ form {
   align-items: center;
   flex-direction: column;
   border-radius: 5px;
-}
+`;
 
-label {
+export const Label = styled.label`
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   color: whitesmoke;
   margin-bottom: 26px;
-}
+`;
 
-textarea {
+export const TextArea = styled.textarea`
   background-color: #06111dda;
   border: 2px solid #306683e8;
   border-radius: 4px;
@@ -30,26 +32,25 @@ textarea {
   padding: 12px;
   height: 96px;
   width: calc(100%-25px);
-}
+  &::placeholder {
+    color: whitesmoke;
+    font-family: "Zen Kaku Gothic Antique";
+    font-weight: 400px;
+  }
+  &:focus {
+    outline-color: #306683e8;
+  }
+`;
 
-textarea::placeholder {
-  color: whitesmoke;
-  font-family: "Zen Kaku Gothic Antique";
-  font-weight: 400px;
-}
-textarea:focus {
-  outline-color: #306683e8;
-}
-
-.TodoForm-buttonContainer {
+export const ButtonContainer = styled.div`
   margin-top: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
+`;
 
-.TodoForm-button {
+const Button = styled.button`
   cursor: pointer;
   display: inline-block;
   font-size: 20px;
@@ -60,18 +61,18 @@ textarea:focus {
   border-radius: 4px;
   border: none;
   font-family: "Zen Kaku Gothic Antique";
-}
+`;
 
-.TodoForm-button--add {
+export const ButtonAdd = styled(Button)`
   background: #49c9dda4;
   box-shadow: 0px 5px 25px rgba(97, 217, 250, 0.158);
-}
-.TodoForm-button--cancel {
+  &:hover {
+    background: #49c9ddf6;
+  }
+`;
+export const ButtonCancel = styled(Button)`
   background: rgba(196, 70, 70, 0.767);
-}
-.TodoForm-button--add:hover {
-  background: #49c9ddf6;
-}
-.TodoForm-button--cancel:hover {
-  background: rgb(196, 70, 70);
-}
+  &:hover {
+    background: rgb(196, 70, 70);
+  }
+`;

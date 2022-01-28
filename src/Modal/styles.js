@@ -1,4 +1,6 @@
-.ModalBackground {
+import styled from "styled-components";
+
+export const StyledModal = styled.div`
   background: rgba(32, 35, 41, 0.8);
   position: fixed;
   top: -10px;
@@ -9,4 +11,4 @@
   justify-content: center;
   align-items: center;
   color: whitesmoke;
-}
+`;

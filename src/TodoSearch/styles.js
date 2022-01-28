@@ -1,4 +1,6 @@
-.todo_search {
+import styled from "styled-components";
+
+export const Search = styled.input`
   background: #06111de7;
   border-radius: 5px;
   border: 2px solid #1c374b;
@@ -11,17 +13,15 @@
   font-weight: 400;
   color: whitesmoke;
   box-shadow: 0px 5px 50px #1c374b3b;
-}
-
-.todo_search::placeholder {
-  color: whitesmoke;
-  font-family: "Zen Kaku Gothic Antique";
-  font-weight: 400;
-}
-
-.todo_search:focus {
-  outline-color: #61dafa;
-}
-.todo_search:disabled {
-  opacity: 60%;
-}
+  &::placeholder {
+    color: whitesmoke;
+    font-family: "Zen Kaku Gothic Antique";
+    font-weight: 400;
+  }
+  &:focus {
+    outline-color: #61dafa;
+  }
+  &:disabled {
+    opacity: 60%;
+  }
+`;

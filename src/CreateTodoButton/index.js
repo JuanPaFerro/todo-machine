@@ -1,14 +1,10 @@
-import "./CreateTodoButton.css";
+import { Button } from "./styles";
 
 function CreateTodoButton({ setOpenModal }) {
   const handleCreateTodo = () => {
     setOpenModal((prevState) => !prevState);
   };
-  return (
-    <button className="CreateTodoButton" onClick={handleCreateTodo}>
-      Create ToDo
-    </button>
-  );
+  return <Button onClick={handleCreateTodo}>Create ToDo</Button>;
 }
 
 export default CreateTodoButton;

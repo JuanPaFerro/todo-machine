@@ -1,10 +1,11 @@
-import "./TodoSearch.css";
+import { Search } from "./styles";
+
 function TodoSearch({ searchValue, setSearchValue, loading }) {
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
   return (
-    <input
+    <Search
       className="todo_search"
       placeholder="Search ToDos..."
       value={searchValue}

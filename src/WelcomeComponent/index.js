@@ -1,15 +1,15 @@
 import React from "react";
 import IconComponent from "../IconComponent";
-import "./WelcomeComponent.css";
+import { Welcome } from "./styles";
 
 function WelcomeComponent() {
   return (
-    <div className="WelcomeComponent">
+    <Welcome>
       <h1>
         Welcome to ToDoMan <IconComponent type="main-icon" />
       </h1>
       <h3>Your favorite app to track your daily tasks </h3>
-    </div>
+    </Welcome>
   );
 }
 

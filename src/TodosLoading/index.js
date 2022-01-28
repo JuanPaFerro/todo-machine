@@ -1,18 +1,14 @@
 import React from "react";
-import IconComponent from "../IconComponent";
-import "./TodosLoading.css";
+import { Container, IconDelete, IconComplete, Text } from "./styles";
+
 function TodosLoading() {
   return (
     <React.Fragment>
-      <div className="LoadingTodo-container">
-        <span className="LoadingTodo-completeIcon">
-          <IconComponent type="check" />
-        </span>
-        <p className="LoadingTodo-text">Loading ToDos...</p>
-        <span className="LoadingTodo-deleteIcon">
-          <IconComponent type="delete" />
-        </span>
-      </div>
+      <Container>
+        <IconComplete />
+        <Text className="LoadingTodo-text">Loading ToDos...</Text>
+        <IconDelete />
+      </Container>
     </React.Fragment>
   );
 }

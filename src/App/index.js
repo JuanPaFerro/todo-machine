@@ -12,7 +12,8 @@ import EmptyTodos from "../EmptyTodos";
 import TodosError from "../TodosError";
 import TodosLoading from "../TodosLoading";
 import ChangeAlert from "../ChangeAlert";
-import "./App.css";
+
+import { AppContainer } from "./styles";
 
 function App() {
   const { states, stateUpdaters } = useTodos();
@@ -35,7 +36,7 @@ function App() {
   } = stateUpdaters;
 
   return (
-    <div className="App-container">
+    <AppContainer>
       <WelcomeComponent />
       <TodoCounter
         totalTodos={totalTodos}
@@ -80,7 +81,7 @@ function App() {
       <CreateTodoButton setOpenModal={setOpenModal} />
 
       <ChangeAlert synchronizeTodos={synchronizeTodos} />
-    </div>
+    </AppContainer>
   );
 }
 

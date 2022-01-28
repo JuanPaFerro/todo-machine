@@ -1,24 +1,34 @@
-import "./TodoItem.css";
+import {
+  Item,
+  Text,
+  TextComplete,
+  IconCheck,
+  IconActive,
+  IconDelete,
+} from "./styles";
+
 import IconComponent from "../IconComponent";
 function TodoItem(props) {
   return (
-    <li className="TodoItem">
-      <span
-        className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
-        onClick={props.onComplete}
-      >
-        <IconComponent type="check" />
-      </span>
-      <p
-        onClick={props.onComplete}
-        className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
-      >
-        {props.text}
-      </p>
-      <span className="Icon Icon-delete" onClick={props.onDelete}>
+    <Item>
+      {(props.completed && (
+        <IconActive onClick={props.onComplete}>
+          <IconComponent type="check" />
+        </IconActive>
+      )) || (
+        <IconCheck onClick={props.onComplete}>
+          <IconComponent type="check" />
+        </IconCheck>
+      )}
+
+      {(props.completed && <TextComplete>{props.text}</TextComplete>) || (
+        <Text>{props.text}</Text>
+      )}
+
+      <IconDelete onClick={props.onDelete}>
         <IconComponent type="delete" />
-      </span>
-    </li>
+      </IconDelete>
+    </Item>
   );
 }
 export default TodoItem;

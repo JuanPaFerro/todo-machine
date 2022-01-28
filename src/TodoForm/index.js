@@ -1,5 +1,12 @@
 import { useState } from "react";
-import "./TodoForm.css";
+import {
+  Form,
+  Label,
+  TextArea,
+  ButtonContainer,
+  ButtonAdd,
+  ButtonCancel,
+} from "./styles";
 
 function TodoForm({ addTodo, setOpenModal }) {
   const [newTodoValue, setNewTodoValue] = useState("");
@@ -17,28 +24,23 @@ function TodoForm({ addTodo, setOpenModal }) {
     }
     setOpenModal(false);
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Enter your new ToDo</label>
-      <textarea
+    <Form onSubmit={handleSubmit}>
+      <Label>Enter your new ToDo</Label>
+      <TextArea
         cols="15"
         value={newTodoValue}
         onChange={handleTextChange}
         placeholder="Feed the Cat"
       />
-      <div className="TodoForm-buttonContainer">
-        <button
-          type="button"
-          className="TodoForm-button TodoForm-button--cancel"
-          onClick={handleCancel}
-        >
+      <ButtonContainer>
+        <ButtonCancel type="button" onClick={handleCancel}>
           Cancel
-        </button>
-        <button type="submit" className="TodoForm-button TodoForm-button--add">
-          Add
-        </button>
-      </div>
-    </form>
+        </ButtonCancel>
+        <ButtonAdd type="submit">Add</ButtonAdd>
+      </ButtonContainer>
+    </Form>
   );
 }
 
